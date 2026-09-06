@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spam Scanner — Email Classifier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <p class="logo"><span class="logo-mark">&#9679;</span> Spam Scanner</p>
+    <p class="tag">Naive Bayes &amp; SVM text classification, running entirely on TF-IDF word patterns.</p>
+  </div>
+</header>
+
+<main>
+  <section class="scanner">
+    <div class="compose">
+      <div class="compose-head">
+        <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+        <span class="compose-title">new-message.txt</span>
+      </div>
+      <textarea id="email-text" placeholder="Paste an email or message here to scan it&hellip;"></textarea>
+      <div class="compose-foot">
+        <div class="model-toggle" role="radiogroup" aria-label="Model">
+          <button class="model-btn active" data-model="naive_bayes" role="radio" aria-checked="true">Naive Bayes</button>
+          <button class="model-btn" data-model="svm" role="radio" aria-checked="false">SVM</button>
+        </div>
+        <button id="scan-btn" class="scan-btn">Scan message</button>
+      </div>
+      <div class="examples">
+        <span>Try:</span>
+        <button class="example-btn" data-kind="spam">a spam example</button>
+        <button class="example-btn" data-kind="ham">a normal email</button>
+      </div>
+    </div>
+
+    <div class="report" id="report">
+      <h2>Scan report</h2>
+      <div class="report-body" id="report-body">
+        <p class="placeholder">Paste a message and hit <strong>Scan message</strong> to see the verdict here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <h2>Model performance</h2>
+    <p class="stats-note">Measured on a held-out 20% test split of the bundled sample dataset ({{ metrics.n_spam }} spam / {{ metrics.n_ham }} ham emails, {{ metrics.n_train }} used for training).</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Naive Bayes</h3>
+        <dl>
+          <div><dt>Accuracy</dt><dd>{{ (metrics.naive_bayes.accuracy * 100) | round(1) }}%</dd></div>
+          <div><dt>Precision</dt><dd>{{ (metrics.naive_bayes.precision * 100) | round(1) }}%</dd></div>
+          <div><dt>Recall</dt><dd>{{ (metrics.naive_bayes.recall * 100) | round(1) }}%</dd></div>
+          <div><dt>F1 score</dt><dd>{{ (metrics.naive_bayes.f1 * 100) | round(1) }}%</dd></div>
+        </dl>
+      </div>
+      <div class="stat-card">
+        <h3>Linear SVM</h3>
+        <dl>
+          <div><dt>Accuracy</dt><dd>{{ (metrics.svm.accuracy * 100) | round(1) }}%</dd></div>
+          <div><dt>Precision</dt><dd>{{ (metrics.svm.precision * 100) | round(1) }}%</dd></div>
+          <div><dt>Recall</dt><dd>{{ (metrics.svm.recall * 100) | round(1) }}%</dd></div>
+          <div><dt>F1 score</dt><dd>{{ (metrics.svm.f1 * 100) | round(1) }}%</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Spam Scanner &mdash; TF-IDF features, Multinomial Naive Bayes &amp; Linear SVM, trained on a procedurally generated sample dataset.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

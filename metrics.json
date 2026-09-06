@@ -1,0 +1,18 @@
+{
+  "naive_bayes": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "svm": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "n_train": 617,
+  "n_test": 155,
+  "n_spam": 396,
+  "n_ham": 376
+}
