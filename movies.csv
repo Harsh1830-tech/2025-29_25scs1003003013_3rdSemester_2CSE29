@@ -1,0 +1,41 @@
+movieId,title,genres
+1,The Shawshank Redemption,Drama
+2,The Godfather,Crime|Drama
+3,The Dark Knight,Action|Crime|Drama|Thriller
+4,Pulp Fiction,Crime|Drama
+5,Forrest Gump,Drama|Romance
+6,Inception,Action|Sci-Fi|Thriller
+7,The Matrix,Action|Sci-Fi
+8,Fight Club,Drama|Thriller
+9,Interstellar,Adventure|Drama|Sci-Fi
+10,The Lion King,Animation|Adventure|Drama|Family
+11,Toy Story,Animation|Adventure|Comedy|Family
+12,Finding Nemo,Animation|Adventure|Comedy|Family
+13,The Avengers,Action|Adventure|Sci-Fi
+14,Iron Man,Action|Adventure|Sci-Fi
+15,Titanic,Drama|Romance
+16,The Notebook,Drama|Romance
+17,La La Land,Comedy|Drama|Romance|Musical
+18,Get Out,Horror|Mystery|Thriller
+19,A Quiet Place,Horror|Sci-Fi|Thriller
+20,The Conjuring,Horror|Mystery|Thriller
+21,Superbad,Comedy
+22,The Hangover,Comedy
+23,Bridesmaids,Comedy|Romance
+24,Gladiator,Action|Adventure|Drama
+25,Braveheart,Biography|Drama|History|War
+26,Saving Private Ryan,Drama|War
+27,The Departed,Crime|Drama|Thriller
+28,Goodfellas,Biography|Crime|Drama
+29,Se7en,Crime|Drama|Mystery|Thriller
+30,Whiplash,Drama|Music
+31,Coco,Animation|Adventure|Comedy|Family|Fantasy|Music
+32,Up,Animation|Adventure|Comedy|Drama|Family
+33,WALL-E,Animation|Adventure|Family|Sci-Fi
+34,Spider-Man: Into the Spider-Verse,Animation|Action|Adventure|Sci-Fi
+35,Parasite,Comedy|Drama|Thriller
+36,Joker,Crime|Drama|Thriller
+37,1917,Drama|War
+38,Dune,Adventure|Drama|Sci-Fi
+39,Blade Runner 2049,Drama|Mystery|Sci-Fi|Thriller
+40,The Prestige,Drama|Mystery|Sci-Fi|Thriller
